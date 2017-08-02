@@ -77,7 +77,7 @@
         NSString *path6 = @"http://bos.nj.bpc.baidu.com/tieba-smallvideo/11772_3c435014fb2dd9a5fd56a57cc369f6a0.mp4";
         NSString *path7 = @"http://v4ttyey-10001453.video.myqcloud.com/Microblog/288-4-1452304375video1466172731.mp4";
         
-        _videoplayer.arr_urlStrs = @[path5,path6,path7,path4,path4];
+        _videoplayer.arr_urlStrs = @[path6,path7,path4,path4];
         //_videoplayer.b_autoPlayNext = YES;
         _videoplayer.bl_playProgress = ^(XBAVPlayer *player, CGFloat progress, CGFloat current, CGFloat total) {
             NSLog(@"当前进度：%f, 播放了：%f, 总共：%f",progress,current,total);
