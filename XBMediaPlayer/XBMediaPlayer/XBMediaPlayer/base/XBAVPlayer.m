@@ -7,6 +7,7 @@
 //
 
 #import "XBAVPlayer.h"
+#import "XBAVFileHandle.h"
 
 #define IOS_VERSION  ([[[UIDevice currentDevice] systemVersion] floatValue])
 
@@ -27,9 +28,15 @@
 {
     if (self = [super initWithFrame:frame])
     {
+        [self initParams];
         [self addNoticeAtInit_base];
     }
     return self;
+}
+
+- (void)initParams
+{
+    self.progressRate = 5.0;
 }
 
 - (void)removePlayerTimeObserver
@@ -131,7 +138,8 @@
 {
     WEAK_SELF
     //这里设置每秒执行一次
-    self.playerObserver = [_player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+    // CMTimeMake(time, timeScale)， time / timeScale 是秒
+    self.playerObserver = [_player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, self.progressRate) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         float current = CMTimeGetSeconds(time);
         float total = CMTimeGetSeconds([weakSelf.player.currentItem duration]);
         //NSLog(@"当前已经播放%.2fs.",current);
@@ -211,26 +219,6 @@
         float durationSeconds = CMTimeGetSeconds(timeRange.duration);
         NSTimeInterval totalBuffer = startSeconds + durationSeconds;//缓冲总长度
         
-        /*
-         问题：利用AVPlayer做网络item播放时，若此时网络出现问题，AVPlayer会自动将其暂停，而若几分钟网络好时它并不会自动播放，你必须手动调用AVPlayer的播放方法play才会继续播放。
-         
-         解决：所以现在的问题，就是，何时进行AVPlayer的手动让其播放。我们可以AVPlayer提供给我们的属性currentItem的属性值loadedTimeRanges进行监听 item 缓存大小，当item缓存大小 > 当前播放时长 ，就 调用AVPlayer的play方法进行播放.
-         
-         实测好像没什么卵用
-         */
-        /*
-        NSLog(@"self.lastTime:%f",self.lastTime);
-        if (totalBuffer > self.lastTime + 5)
-        {
-            AVPlayerStatus statusPlay = self.player.status;
-            NSLog(@"AVPlayerStatus%zd",statusPlay);
-            if (statusPlay == AVPlayerStatusReadyToPlay)
-            {
-                [self.player play];
-            }
-        }
-         */
-        
         if (self.bl_bufferBlock)
         {
             WEAK_SELF
@@ -250,7 +238,10 @@
         NSLog(@"缓冲达到可播放程度了");
         
         //由于 AVPlayer 缓存不足就会自动暂停，所以缓存充足了需要手动播放，才能继续播放
-        [self.player play];
+        if (self.b_isPlaying)
+        {
+            [self continuePlay];
+        }
     }
 }
 
@@ -364,7 +355,8 @@
         NSURL *url = [NSURL URLWithString:urlStr];
         
         //有缓存播放缓存文件
-        NSString * cacheFilePath = [SUFileHandle cacheFileExistsWithURL:url];
+        //        NSString * cacheFilePath = [SUFileHandle cacheFileExistsWithURL:url];
+        NSString * cacheFilePath = [[XBAVFileHandle shared] fileExistsWithURL:url];
         if (cacheFilePath)
         {
             NSURL * url = [NSURL fileURLWithPath:cacheFilePath];
@@ -373,7 +365,7 @@
         }
         else
         {
-            self.resourceLoader = [[SUResourceLoader alloc]init];
+            self.resourceLoader = [[XBResourceLoader alloc]init];
             self.resourceLoader.delegate = self;
             AVURLAsset * asset = [AVURLAsset URLAssetWithURL:[url customSchemeURL] options:nil];
             [asset.resourceLoader setDelegate:self.resourceLoader queue:dispatch_get_main_queue()];
@@ -384,12 +376,12 @@
     }
 }
 
-#pragma mark - SULoaderDelegate
-- (void)loader:(SUResourceLoader *)loader cacheProgress:(CGFloat)progress
+#pragma mark - XBLoaderDelegate
+- (void)loader:(XBResourceLoader *)loader cacheProgress:(CGFloat)progress
 {
     NSLog(@"缓冲进度%f",progress);
 }
-- (void)loader:(SUResourceLoader *)loader failLoadingWithError:(NSError *)error
+- (void)loader:(XBResourceLoader *)loader failLoadingWithError:(NSError *)error
 {
     NSLog(@"下载出错，错误码：%zd",error.code);
     

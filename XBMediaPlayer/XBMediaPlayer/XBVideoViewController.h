@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XBRequestTask.h"
 
 @interface XBVideoViewController : UIViewController
-
+@property (nonatomic,strong) XBRequestTask *task;
 @end

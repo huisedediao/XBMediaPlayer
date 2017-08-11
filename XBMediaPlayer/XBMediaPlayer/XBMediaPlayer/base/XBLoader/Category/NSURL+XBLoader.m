@@ -1,15 +1,14 @@
 //
-//  NSURL+SULoader.m
-//  SULoader
+//  NSURL+XBLoader.m
+//  XBMediaPlayer
 //
-//  Created by 万众科技 on 16/6/28.
-//  Copyright © 2016年 万众科技. All rights reserved.
+//  Created by xxb on 2017/8/9.
+//  Copyright © 2017年 xxb. All rights reserved.
 //
 
-#import "NSURL+SULoader.h"
+#import "NSURL+XBLoader.h"
 
-@implementation NSURL (SULoader)
-
+@implementation NSURL (XBLoader)
 - (NSURL *)customSchemeURL {
     NSURLComponents * components = [[NSURLComponents alloc] initWithURL:self resolvingAgainstBaseURL:NO];
     components.scheme = @"streaming";
@@ -21,5 +20,4 @@
     components.scheme = @"http";
     return [components URL];
 }
-
 @end

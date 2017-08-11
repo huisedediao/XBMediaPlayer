@@ -9,9 +9,11 @@
 #import "XBVideoViewController.h"
 #import "XBVideoPlayer.h"
 #import "Masonry.h"
+#import "XBDataTaskManager.h"
+#import "NSURL+XBLoader.h"
 
 @interface XBVideoViewController ()
-
+@property (nonatomic,strong) UISlider *slider;
 @property (nonatomic,strong) XBVideoPlayer *videoplayer;
 @end
 
@@ -21,13 +23,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIButton *button  = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:button];
-    button.frame = CGRectMake(100, 100, 100, 100);
-    button.backgroundColor = [UIColor redColor];
-    [button addTarget:self action:@selector(playVideo:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UISlider *slider = [[UISlider alloc] init];
+    [self.view addSubview:slider];
+    slider.frame = CGRectMake(25, 400, 300, 30);
+    [slider addTarget:self action:@selector(changeProgress:) forControlEvents:UIControlEventValueChanged];
+    self.slider = slider;
 }
-
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.videoplayer playWithErrorBlock:^(XBAVPlayer *player, XBAVPlayerError xbError) {
+        
+    }];
+}
+- (void)changeProgress:(UISlider *)slider
+{
+    [self.videoplayer seekToTime:self.videoplayer.f_playingItemDuration * slider.value];
+}
 - (void)playVideo:(UIButton *)button
 {
     [self.videoplayer playWithErrorBlock:nil];
@@ -45,7 +57,16 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.videoplayer next];
+//    [self.videoplayer next];
+//    [self.videoplayer seekToTime:250];
+//    if (self.videoplayer.b_isPlaying)
+//    {
+//        [self.videoplayer pause];
+//    }
+//    else
+//    {
+//        [self.videoplayer continuePlay];
+//    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -77,16 +98,19 @@
         NSString *path6 = @"http://bos.nj.bpc.baidu.com/tieba-smallvideo/11772_3c435014fb2dd9a5fd56a57cc369f6a0.mp4";
         NSString *path7 = @"http://v4ttyey-10001453.video.myqcloud.com/Microblog/288-4-1452304375video1466172731.mp4";
         
-        _videoplayer.arr_urlStrs = @[path6,path7,path4,path4];
+//        _videoplayer.arr_urlStrs = @[path5,path6,path7,path4,path4];
+        _videoplayer.arr_urlStrs = @[[self.task.requestURL originalSchemeURL].absoluteString];
         //_videoplayer.b_autoPlayNext = YES;
+        WEAK_SELF
         _videoplayer.bl_playProgress = ^(XBAVPlayer *player, CGFloat progress, CGFloat current, CGFloat total) {
             NSLog(@"当前进度：%f, 播放了：%f, 总共：%f",progress,current,total);
+            weakSelf.slider.value = progress;
         };
         
         _videoplayer.bl_bufferBlock = ^(XBAVPlayer *player, CGFloat totalBuffer) {
             NSLog(@"已经缓冲了：%f",totalBuffer);
         };
-        WEAK_SELF
+        
         
         _videoplayer.bl_layout_vertical = ^(XBAVPlayer *player) {
             [player mas_remakeConstraints:^(MASConstraintMaker *make) {

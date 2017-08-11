@@ -10,11 +10,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
 #import "XBAVPlayerConfig.h"
-#import "SUResourceLoader.h"
+#import "XBResourceLoader.h"
 
-@interface XBAVPlayer : UIView <SULoaderDelegate>
+@interface XBAVPlayer : UIView <XBLoaderDelegate>
 
-@property (nonatomic, strong) SUResourceLoader *resourceLoader;//资源控制器，用于缓存item
+@property (nonatomic, strong) XBResourceLoader *resourceLoader;//资源控制器，用于缓存item
 
 @property (nonatomic,strong) AVPlayer *player;//播放器对象
 
@@ -29,6 +29,8 @@
 @property (nonatomic,assign) BOOL b_autoPlayNext; //是否自动播放下一个
 
 @property (nonatomic,assign) BOOL b_isPlaying; //是否在播放
+
+@property (nonatomic,assign) CGFloat progressRate;//进度回调的频率，5则为每秒回调5次
 
 
 

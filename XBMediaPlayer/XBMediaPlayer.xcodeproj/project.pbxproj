@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F149073D1F3B073E0013C38B /* NSString+XBLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F149073C1F3B073E0013C38B /* NSString+XBLoader.m */; };
+		F14907401F3B076B0013C38B /* NSURL+XBLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F149073F1F3B076B0013C38B /* NSURL+XBLoader.m */; };
+		F14907431F3B090F0013C38B /* XBAVFileHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F14907421F3B090F0013C38B /* XBAVFileHandle.m */; };
+		F14907461F3B09720013C38B /* XBDataTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F14907451F3B09720013C38B /* XBDataTaskManager.m */; };
+		F14907491F3B09B00013C38B /* XBRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F14907481F3B09B00013C38B /* XBRequestTask.m */; };
+		F149074C1F3B0A030013C38B /* XBResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F149074B1F3B0A030013C38B /* XBResourceLoader.m */; };
+		F14907501F3BFC6C0013C38B /* XBTasklistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F149074F1F3BFC6C0013C38B /* XBTasklistVC.m */; };
 		F183A9571EFE487500ACC4F1 /* XBAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = F183A9561EFE487500ACC4F1 /* XBAudioRecorder.m */; };
 		F1AC0E5A1F0C9192006AEAC6 /* XBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC0E591F0C9192006AEAC6 /* XBViewController.m */; };
 		F1AC0E5D1F0C958E006AEAC6 /* XBVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1AC0E5C1F0C958E006AEAC6 /* XBVideoViewController.m */; };
@@ -43,11 +50,6 @@
 		F1CD07D61EFE105900DB2C99 /* Warning Alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1CD07D11EFE105900DB2C99 /* Warning Alarm.wav */; };
 		F1CD07D71EFE105900DB2C99 /* Woof.wav in Resources */ = {isa = PBXBuildFile; fileRef = F1CD07D21EFE105900DB2C99 /* Woof.wav */; };
 		F1CD07DA1EFE15D900DB2C99 /* XBAudioModeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CD07D91EFE15D900DB2C99 /* XBAudioModeManager.m */; };
-		F1FF699B1F305DF1001EC42A /* NSString+SULoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FF69911F305DF1001EC42A /* NSString+SULoader.m */; };
-		F1FF699C1F305DF1001EC42A /* NSURL+SULoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FF69931F305DF1001EC42A /* NSURL+SULoader.m */; };
-		F1FF699D1F305DF1001EC42A /* SUFileHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FF69961F305DF1001EC42A /* SUFileHandle.m */; };
-		F1FF699E1F305DF1001EC42A /* SURequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FF69981F305DF1001EC42A /* SURequestTask.m */; };
-		F1FF699F1F305DF1001EC42A /* SUResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F1FF699A1F305DF1001EC42A /* SUResourceLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F149073B1F3B073E0013C38B /* NSString+XBLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XBLoader.h"; sourceTree = "<group>"; };
+		F149073C1F3B073E0013C38B /* NSString+XBLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XBLoader.m"; sourceTree = "<group>"; };
+		F149073E1F3B076B0013C38B /* NSURL+XBLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+XBLoader.h"; sourceTree = "<group>"; };
+		F149073F1F3B076B0013C38B /* NSURL+XBLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+XBLoader.m"; sourceTree = "<group>"; };
+		F14907411F3B090F0013C38B /* XBAVFileHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBAVFileHandle.h; sourceTree = "<group>"; };
+		F14907421F3B090F0013C38B /* XBAVFileHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBAVFileHandle.m; sourceTree = "<group>"; };
+		F14907441F3B09720013C38B /* XBDataTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBDataTaskManager.h; sourceTree = "<group>"; };
+		F14907451F3B09720013C38B /* XBDataTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBDataTaskManager.m; sourceTree = "<group>"; };
+		F14907471F3B09B00013C38B /* XBRequestTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBRequestTask.h; sourceTree = "<group>"; };
+		F14907481F3B09B00013C38B /* XBRequestTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBRequestTask.m; sourceTree = "<group>"; };
+		F149074A1F3B0A030013C38B /* XBResourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBResourceLoader.h; sourceTree = "<group>"; };
+		F149074B1F3B0A030013C38B /* XBResourceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBResourceLoader.m; sourceTree = "<group>"; };
+		F149074D1F3BE8FC0013C38B /* XBLoaderHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBLoaderHeader.h; sourceTree = "<group>"; };
+		F149074E1F3BFC6C0013C38B /* XBTasklistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBTasklistVC.h; sourceTree = "<group>"; };
+		F149074F1F3BFC6C0013C38B /* XBTasklistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBTasklistVC.m; sourceTree = "<group>"; };
 		F183A9551EFE487500ACC4F1 /* XBAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBAudioRecorder.h; sourceTree = "<group>"; };
 		F183A9561EFE487500ACC4F1 /* XBAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBAudioRecorder.m; sourceTree = "<group>"; };
 		F1AC0E581F0C9192006AEAC6 /* XBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBViewController.h; sourceTree = "<group>"; };
@@ -137,17 +154,6 @@
 		F1CD07D21EFE105900DB2C99 /* Woof.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Woof.wav; sourceTree = "<group>"; };
 		F1CD07D81EFE15D900DB2C99 /* XBAudioModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBAudioModeManager.h; sourceTree = "<group>"; };
 		F1CD07D91EFE15D900DB2C99 /* XBAudioModeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBAudioModeManager.m; sourceTree = "<group>"; };
-		F1FF69901F305DF1001EC42A /* NSString+SULoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SULoader.h"; sourceTree = "<group>"; };
-		F1FF69911F305DF1001EC42A /* NSString+SULoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SULoader.m"; sourceTree = "<group>"; };
-		F1FF69921F305DF1001EC42A /* NSURL+SULoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+SULoader.h"; sourceTree = "<group>"; };
-		F1FF69931F305DF1001EC42A /* NSURL+SULoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SULoader.m"; sourceTree = "<group>"; };
-		F1FF69941F305DF1001EC42A /* SULoaderCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SULoaderCategory.h; sourceTree = "<group>"; };
-		F1FF69951F305DF1001EC42A /* SUFileHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUFileHandle.h; sourceTree = "<group>"; };
-		F1FF69961F305DF1001EC42A /* SUFileHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUFileHandle.m; sourceTree = "<group>"; };
-		F1FF69971F305DF1001EC42A /* SURequestTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SURequestTask.h; sourceTree = "<group>"; };
-		F1FF69981F305DF1001EC42A /* SURequestTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SURequestTask.m; sourceTree = "<group>"; };
-		F1FF69991F305DF1001EC42A /* SUResourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUResourceLoader.h; sourceTree = "<group>"; };
-		F1FF699A1F305DF1001EC42A /* SUResourceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUResourceLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F14907391F3B070E0013C38B /* XBLoader */ = {
+			isa = PBXGroup;
+			children = (
+				F149073A1F3B07250013C38B /* Category */,
+				F14907411F3B090F0013C38B /* XBAVFileHandle.h */,
+				F14907421F3B090F0013C38B /* XBAVFileHandle.m */,
+				F14907441F3B09720013C38B /* XBDataTaskManager.h */,
+				F14907451F3B09720013C38B /* XBDataTaskManager.m */,
+				F14907471F3B09B00013C38B /* XBRequestTask.h */,
+				F14907481F3B09B00013C38B /* XBRequestTask.m */,
+				F149074A1F3B0A030013C38B /* XBResourceLoader.h */,
+				F149074B1F3B0A030013C38B /* XBResourceLoader.m */,
+				F149074D1F3BE8FC0013C38B /* XBLoaderHeader.h */,
+			);
+			path = XBLoader;
+			sourceTree = "<group>";
+		};
+		F149073A1F3B07250013C38B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F149073B1F3B073E0013C38B /* NSString+XBLoader.h */,
+				F149073C1F3B073E0013C38B /* NSString+XBLoader.m */,
+				F149073E1F3B076B0013C38B /* NSURL+XBLoader.h */,
+				F149073F1F3B076B0013C38B /* NSURL+XBLoader.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		F1CD074E1EFE0D2C00DB2C99 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +249,8 @@
 				F1AC0E591F0C9192006AEAC6 /* XBViewController.m */,
 				F1AC0E5B1F0C958E006AEAC6 /* XBVideoViewController.h */,
 				F1AC0E5C1F0C958E006AEAC6 /* XBVideoViewController.m */,
+				F149074E1F3BFC6C0013C38B /* XBTasklistVC.h */,
+				F149074F1F3BFC6C0013C38B /* XBTasklistVC.m */,
 			);
 			path = XBMediaPlayer;
 			sourceTree = "<group>";
@@ -248,7 +284,6 @@
 		F1CD078D1EFE0D3900DB2C99 /* XBMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				F1FF698E1F305DF1001EC42A /* SULoader */,
 				F1CD078E1EFE0D3900DB2C99 /* base */,
 				F1CD07921EFE0D3900DB2C99 /* XBVideoPlayer.h */,
 				F1CD07931EFE0D3900DB2C99 /* XBVideoPlayer.m */,
@@ -267,6 +302,7 @@
 		F1CD078E1EFE0D3900DB2C99 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				F14907391F3B070E0013C38B /* XBLoader */,
 				F1CD078F1EFE0D3900DB2C99 /* XBAVPlayer.h */,
 				F1CD07901EFE0D3900DB2C99 /* XBAVPlayer.m */,
 				F1CD07911EFE0D3900DB2C99 /* XBAVPlayerConfig.h */,
@@ -337,32 +373,6 @@
 				F1CD07D21EFE105900DB2C99 /* Woof.wav */,
 			);
 			path = ring;
-			sourceTree = "<group>";
-		};
-		F1FF698E1F305DF1001EC42A /* SULoader */ = {
-			isa = PBXGroup;
-			children = (
-				F1FF698F1F305DF1001EC42A /* Category */,
-				F1FF69951F305DF1001EC42A /* SUFileHandle.h */,
-				F1FF69961F305DF1001EC42A /* SUFileHandle.m */,
-				F1FF69971F305DF1001EC42A /* SURequestTask.h */,
-				F1FF69981F305DF1001EC42A /* SURequestTask.m */,
-				F1FF69991F305DF1001EC42A /* SUResourceLoader.h */,
-				F1FF699A1F305DF1001EC42A /* SUResourceLoader.m */,
-			);
-			path = SULoader;
-			sourceTree = "<group>";
-		};
-		F1FF698F1F305DF1001EC42A /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				F1FF69901F305DF1001EC42A /* NSString+SULoader.h */,
-				F1FF69911F305DF1001EC42A /* NSString+SULoader.m */,
-				F1FF69921F305DF1001EC42A /* NSURL+SULoader.h */,
-				F1FF69931F305DF1001EC42A /* NSURL+SULoader.m */,
-				F1FF69941F305DF1001EC42A /* SULoaderCategory.h */,
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,31 +524,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1CD07BE1EFE0D7200DB2C99 /* MASConstraint.m in Sources */,
-				F1FF699C1F305DF1001EC42A /* NSURL+SULoader.m in Sources */,
 				F1CD07C11EFE0D7200DB2C99 /* MASViewAttribute.m in Sources */,
 				F1CD07C61EFE0D7200DB2C99 /* ViewController+MASAdditions.m in Sources */,
 				F1CD07C31EFE0D7200DB2C99 /* NSArray+MASAdditions.m in Sources */,
 				F1CD07621EFE0D2D00DB2C99 /* ViewController.m in Sources */,
-				F1FF699D1F305DF1001EC42A /* SUFileHandle.m in Sources */,
 				F1CD07C21EFE0D7200DB2C99 /* MASViewConstraint.m in Sources */,
+				F149074C1F3B0A030013C38B /* XBResourceLoader.m in Sources */,
 				F183A9571EFE487500ACC4F1 /* XBAudioRecorder.m in Sources */,
+				F149073D1F3B073E0013C38B /* NSString+XBLoader.m in Sources */,
 				F1CD07C01EFE0D7200DB2C99 /* MASLayoutConstraint.m in Sources */,
 				F1AC0E5A1F0C9192006AEAC6 /* XBViewController.m in Sources */,
+				F14907461F3B09720013C38B /* XBDataTaskManager.m in Sources */,
 				F1CD07A21EFE0D6600DB2C99 /* MBProgressHUD.m in Sources */,
+				F14907401F3B076B0013C38B /* NSURL+XBLoader.m in Sources */,
 				F1CD07C91EFE0F1F00DB2C99 /* XBAudioPlayer.m in Sources */,
 				F1CD07CC1EFE103E00DB2C99 /* XBEffectSoundPlayer.m in Sources */,
 				F1CD07941EFE0D3900DB2C99 /* XBAVPlayer.m in Sources */,
+				F14907501F3BFC6C0013C38B /* XBTasklistVC.m in Sources */,
+				F14907431F3B090F0013C38B /* XBAVFileHandle.m in Sources */,
 				F1CD07C51EFE0D7200DB2C99 /* View+MASAdditions.m in Sources */,
 				F1CD07BD1EFE0D7200DB2C99 /* MASCompositeConstraint.m in Sources */,
-				F1FF699B1F305DF1001EC42A /* NSString+SULoader.m in Sources */,
 				F1CD07DA1EFE15D900DB2C99 /* XBAudioModeManager.m in Sources */,
-				F1FF699F1F305DF1001EC42A /* SUResourceLoader.m in Sources */,
 				F1CD07C41EFE0D7200DB2C99 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				F1CD07BF1EFE0D7200DB2C99 /* MASConstraintMaker.m in Sources */,
 				F1CD07951EFE0D3900DB2C99 /* XBVideoPlayer.m in Sources */,
 				F1CD075F1EFE0D2D00DB2C99 /* AppDelegate.m in Sources */,
+				F14907491F3B09B00013C38B /* XBRequestTask.m in Sources */,
 				F1AC0E5D1F0C958E006AEAC6 /* XBVideoViewController.m in Sources */,
-				F1FF699E1F305DF1001EC42A /* SURequestTask.m in Sources */,
 				F1CD075C1EFE0D2C00DB2C99 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

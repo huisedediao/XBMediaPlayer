@@ -13,7 +13,7 @@
 #import "XBAudioRecorder.h"
 #import "XBViewController.h"
 #import "XBVideoViewController.h"
-
+#import "XBTasklistVC.h"
 
 @interface ViewController ()
 @property (nonatomic,strong) XBVideoPlayer *videoplayer;
@@ -42,7 +42,8 @@
 }
 
 - (IBAction)shipin:(id)sender {
-    [self.navigationController pushViewController:[XBVideoViewController new] animated:YES];
+//    [self.navigationController pushViewController:[XBVideoViewController new] animated:YES];
+    [self.navigationController pushViewController:[XBTasklistVC new] animated:YES];
 }
 
 -(XBAudioPlayer *)audioPlayer
