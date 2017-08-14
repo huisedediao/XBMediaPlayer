@@ -24,8 +24,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSString *path6 = @"http://bos.nj.bpc.baidu.com/tieba-smallvideo/11772_3c435014fb2dd9a5fd56a57cc369f6a0.mp4";
-    [[XBDataTaskManager shared] addDataTaskWithUrl:[NSURL URLWithString:path6] start:NO];
+    if ([XBDataTaskManager shared].arrM_taskList.count < 1)
+    {
+        NSString *path6 = @"http://bos.nj.bpc.baidu.com/tieba-smallvideo/11772_3c435014fb2dd9a5fd56a57cc369f6a0.mp4";
+        [[XBDataTaskManager shared] addDataTaskWithUrl:[NSURL URLWithString:path6] start:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
