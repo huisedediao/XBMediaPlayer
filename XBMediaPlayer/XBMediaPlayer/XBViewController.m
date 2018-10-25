@@ -20,12 +20,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     NSLog(@"address:%@",self);
     
     UIButton *button  = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:button];
+    [button setTitle:@"play" forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor orangeColor];
     button.frame = CGRectMake(100, 100, 100, 100);
-    button.backgroundColor = [UIColor redColor];
     [button addTarget:self action:@selector(playVideo:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -62,10 +65,7 @@
     if (_audioPlayer == nil)
     {
         _audioPlayer = [XBAudioPlayer new];
-        
-        //NSString *path0 = [[NSBundle mainBundle] pathForResource:@"周杰伦-晴天.mp3" ofType:nil];
-        //NSString *path5 = @"http://qqma.tingge123.com:823/mp3/2016-06-01/1464765547.mp3";//晴天在线、
-        //_audioPlayer.arr_urlStrs = @[path0];
+    
         NSString *path0 = [[NSBundle mainBundle] pathForResource:@"周杰伦-晴天.mp3" ofType:nil];
         _audioPlayer.arr_urlStrs = @[path0,path0];
         
